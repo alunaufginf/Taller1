@@ -57,6 +57,37 @@ public class ProductoTest {
         }
     }
     @Test
+    public void testInsertarProductoExitoso2(){
+        try{
+
+
+            Thread.sleep(2000); //una demora de dos segundos
+            driver.findElement(By.xpath("/html/body/section/div[1]/div")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/section/div[1]/nav/ul/li/span")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.linkText("Mnt. de Productos")).click();
+            driver.findElement(By.id("btnNuevo")).click();
+            driver.findElement(By.id("txtNombre")).clear();
+            driver.findElement(By.id("txtNombre")).sendKeys("Pizza Familiar Peperoni");
+            driver.findElement(By.xpath("/html/body/section/div[2]/div/div/div/div/div/div[2]/form/table/tbody/tr[2]/td[3]/select/option[5]")).click();
+            driver.findElement(By.id("txtPrecio")).clear();
+            driver.findElement(By.id("txtPrecio")).sendKeys("19.90");
+            driver.findElement(By.id("btnGuardar")).click();
+
+            Thread.sleep(2000);
+
+            String mensajeEsperado= "Se guardó de manera correcta el Producto";
+            String mensajeObtenido= driver.findElement(By.id("messages")).getText();
+
+            assertEquals(mensajeEsperado, mensajeObtenido);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            fail();
+        }
+    }
+    @Test
     public void testInsertarProductoDatosVacios(){
         try{
 
