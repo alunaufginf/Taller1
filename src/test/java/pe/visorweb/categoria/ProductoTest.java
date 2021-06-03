@@ -70,7 +70,7 @@ public class ProductoTest {
             driver.findElement(By.id("btnNuevo")).click();
             driver.findElement(By.id("txtNombre")).clear();
             driver.findElement(By.id("txtNombre")).sendKeys("Pizza Familiar Peperoni");
-            driver.findElement(By.xpath("/html/body/section/div[2]/div/div/div/div/div/div[2]/form/table/tbody/tr[2]/td[3]/select/option[5]")).click();
+           // driver.findElement(By.xpath("/html/body/section/div[2]/div/div/div/div/div/div[2]/form/table/tbody/tr[2]/td[3]/select/option[5]")).click();
             driver.findElement(By.id("txtPrecio")).clear();
             driver.findElement(By.id("txtPrecio")).sendKeys("19.90");
             driver.findElement(By.id("btnGuardar")).click();
